@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ProcessTranslation();
+        ProcessRotation();
     }
 
     public void OnMove(InputValue value)
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         movement = value.Get<Vector2>();
     }
 
-    private void ProcessTranslation()
+    void ProcessTranslation()
     {
         
         float xOffset = movement.x * controlSpeed * Time.deltaTime;
@@ -34,4 +35,8 @@ public class PlayerMovement : MonoBehaviour
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, 0f);
     }
 
+    void ProcessRotation()
+    {
+        transform.localRotation = Quaternion.Euler(0f, 0f, 45f);
+    }
 }
