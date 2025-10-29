@@ -8,12 +8,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float xClampRange = 5f;
     [SerializeField] float yClampRange = 5f;
 
-    [SerializeField] float controlRollFactor = 20f;
+    [SerializeField] float controlPitchFactor = 20f;
+    [SerializeField] float controlRollFactor = 18f;
     [SerializeField] float rotationSpeed = 10f;
 
     Vector2 movement;
 
-    private bool isFiring = false;
 
     void Update()
     {
@@ -42,22 +42,10 @@ public class PlayerMovement : MonoBehaviour
 
     void ProcessRotation()
     {
+        float pitch = controlPitchFactor * movement.y;
+        float roll = controlRollFactor * movement.x;
+
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, -controlRollFactor * movement.x);
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
-    }
-
-    public void OnFire()
-    {
-
-        isFiring = !isFiring;
-
-        if (isFiring)
-        {
-            Debug.Log("Firing has started!");
-        }
-        else 
-        {
-            Debug.Log("Firing has stopped!");
-        }
     }
 }
