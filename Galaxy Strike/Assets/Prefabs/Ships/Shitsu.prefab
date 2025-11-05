@@ -84,7 +84,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3393795819870339268, guid: 4f602c4ccbca1b748a9d53ad56abc629, type: 3}
       propertyPath: m_Name
-      value: Enemy 2
+      value: Shitsu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064835314069084066, guid: 4f602c4ccbca1b748a9d53ad56abc629, type: 3}
+      propertyPath: hitPoints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064835314069084066, guid: 4f602c4ccbca1b748a9d53ad56abc629, type: 3}
+      propertyPath: scoreValue
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5268779465305485215, guid: 4f602c4ccbca1b748a9d53ad56abc629, type: 3}
       propertyPath: m_Size.x
